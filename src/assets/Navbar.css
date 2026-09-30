@@ -1,0 +1,25 @@
+.navbar{
+    color: black;
+    background-color: rgb(241, 226, 144);
+    padding: 15px;
+    margin-bottom: 30px;
+    font-weight: 600;
+
+}
+.skills{
+    font-size: 20px;
+    margin: 5px;
+    color: black;
+}
+
+.name{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+.footer{
+    margin-top: 15px;
+    color: black;
+        background-color: rgb(114, 107, 68);
+        padding: 10px;
+
+}
