@@ -17,11 +17,11 @@ function ToDoList() {
     e.preventDefault();
     if (!inputValue.trim()) return;
     const newTask = { id: Date.now(), text: inputValue, completed: false }
-   
+
     // dispatch({ type: 'ADD_TASK', task: { text: inputValue.trim() } });
-   
+
     setTasks((prevTasks) => {
-     return [...prevTasks, newTask]
+      return [...prevTasks, newTask]
     })
     setInputValue("");
   }
@@ -38,8 +38,8 @@ function ToDoList() {
   // delete task
   function deleteTask(id) {
     // dispatch({ type: 'DELETE_TASK', id });
-    setTasks((prevTasks)=>{
-      prevTasks.filter((task)=> task.id!==id)
+    setTasks((prevTasks) => {
+    return  prevTasks.filter((task) => task.id !== id)
     })
   }
 
