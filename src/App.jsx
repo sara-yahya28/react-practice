@@ -2,10 +2,10 @@ import { useState } from 'react'
 import './App.css'
 import CartItem from './CartItem'
 import About from './components/About'
-import Navbar from './components/Navbar'
 import Footer from './components/footer'
 import ToDoList from './ToDoList/ToDoList'
-
+import UserDirectory from './UserDirectory/UserDirectory'
+import ThemeProvider from './ToDoList/ThemeContext'
 function App() {
   return (
     <>
@@ -25,7 +25,10 @@ function App() {
       {/* <UserList />
       <Welcome />
       <SimpleForm /> */}
-<ToDoList />
+      <ThemeProvider>
+        <ToDoList />
+      </ThemeProvider>
+      {/* <UserDirectory /> */}
     </>)
 }
 

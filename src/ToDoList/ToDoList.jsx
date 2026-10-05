@@ -1,41 +1,38 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
+import reducer from "./reducer";
 import "./ToDoList.css";
+import { useTheme } from "./ThemeContext";
 
 function ToDoList() {
-  const [inputValue, setInputValue] = useState("");
-  const [tasks, setTasks] = useState([]);
+  // useState (something that always change)
+  const [inputValue, setInputValue] = useState("");//what user type
+  // const [tasks, setTasks] = useState([]);//store typed input
+  const [tasks, dispatch] = useReducer(reducer, []);
+  const { theme, toggleTheme } = useTheme();
 
-// Add new task
+  // Add new task
   function handleTasks(e) {
     e.preventDefault();
     if (!inputValue.trim()) return;
-
-    const newTask = {
-      id: Date.now(),
-      text: inputValue.trim(),
-      completed: false,
-    };
-
-    setTasks([...tasks, newTask]);
+    dispatch({ type: 'ADD_TASK', task: { text: inputValue.trim() } });
     setInputValue("");
   }
 
-// Change task state
+  // Change task state
   function toggleTask(id) {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
-    );
+    dispatch({ type: 'TOGGLE_TASK', id });
   }
 
-// delete task
+  // delete task
   function deleteTask(id) {
-    setTasks(tasks.filter((task) => task.id !== id));
+    dispatch({ type: 'DELETE_TASK', id });
   }
 
   return (
-    <div className="todo-container">
+<div className={`todo-container ${theme}`}>
+        <button className="theme-toggle" onClick={toggleTheme}>
+        {theme === 'light' ? 'dark' : 'light'}
+      </button>
       <h1 className="todo-title">قائمة المهام</h1>
 
       <form className="todo-form" onSubmit={handleTasks}>
