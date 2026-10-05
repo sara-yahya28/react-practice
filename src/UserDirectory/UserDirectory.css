@@ -1,0 +1,158 @@
+/* ============================
+   User Directory — Editorial Theme
+   ============================ */
+
+.users-directory {
+  max-width: 880px;
+  margin: 48px auto;
+  padding: 28px;
+  direction: rtl;
+  text-align: right;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f6f7f9;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* العنوان */
+.users-directory h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #0f766e;
+  margin: 0 0 8px;
+}
+
+.users-directory h1::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  background: #14b8a6;
+  border-radius: 2px;
+  margin: 14px auto 0;
+}
+
+/* حقل البحث */
+.search-input {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  margin: 32px auto 24px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #134e4a;
+  background: #ffffff;
+  border: none;
+  border-radius: 999px;
+  outline: none;
+  box-sizing: border-box;
+  box-shadow: 0 2px 6px rgba(15, 118, 110, 0.08);
+  transition: box-shadow 0.25s ease;
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.35);
+}
+
+/* عدّاد النتائج */
+.results-count {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.85rem;
+  margin: 0 0 20px;
+  letter-spacing: 0.3px;
+}
+
+/* حالة التحميل */
+.loading {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #0f766e;
+  padding: 60px 0;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* القائمة */
+.users-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* البطاقة — أفقية */
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  border-right: 4px solid transparent;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+  text-align: right;
+}
+
+.user-card:hover {
+  border-right-color: #14b8a6;
+  box-shadow: 0 6px 20px rgba(15, 118, 110, 0.1);
+  transform: translateX(-4px);
+}
+
+/* الصورة */
+.user-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #14b8a6;
+  flex-shrink: 0;
+}
+
+/* النص */
+.user-card h3 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #134e4a;
+}
+
+.user-card p {
+  margin: 2px 0;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.user-card p:first-of-type {
+  color: #0f766e;
+  font-weight: 500;
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 600px) {
+  .users-directory {
+    margin: 20px 12px;
+    padding: 20px 16px;
+  }
+
+  .users-directory h1 {
+    font-size: 1.6rem;
+  }
+
+  .user-card {
+    padding: 14px 16px;
+    gap: 14px;
+  }
+
+  .user-avatar {
+    width: 48px;
+    height: 48px;
+  }
+}
